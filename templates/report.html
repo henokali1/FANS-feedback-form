@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Report{% endblock %}
+{% block content %}
+<div class="container">
+        <h1>Report for sample training</h1>
+
+        <div id="piechart"></div>
+        
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+        <script type="text/javascript">
+        // Load google charts
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+        
+        // Draw the chart and set the chart values
+        function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Objectives of the couse were clear', 8],
+          ['The training contents met with your expections', 2],
+          ['The contents were illustrated with examples', 4],
+          ['The lectures were clear and easy to understand.', 2],
+          ['Please give suggestions for the improvement of this training.', 8]
+        ]);
+        
+          // Optional; add a title and set the width and height of the chart
+          var options = {'title':'Feedback Score', 'width':950, 'height':800};
+        
+          // Display the chart inside the <div> element with id="piechart"
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data, options);
+        }
+        </script>
+</div>
+{% endblock %}

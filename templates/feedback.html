@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% block title %}Feedback{% endblock %}
+{% block content %}
+  <div class="row">
+    <div class="col s12">
+      <h1 class="center-align">Sample Training Feedback Form</h1>
+    </div>
+  </div>
+  <div class="container">
+    <form action="/add_feedback/" method="POST">{% csrf_token %}
+    <ol>
+      <h5>
+      <li>
+        <h5>Were objectives of the couse clear to you?</h5>
+        <p>
+          <input class="with-gap" type="radio" name="question_one" id="yes" value="yes">
+          <label for="yes">Yes</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_one" id="no" value="no">
+          <label for="no">No</label>
+        </p>
+      </li>
+      <li>
+        <h5>The training contents met with your expections.</h5>
+        <p>
+          <input class="with-gap" type="radio" name="question_two" id="strongly_agree_two" value="Strongly agree">
+          <label for="strongly_agree_two">Strongly agree</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_two" id="agree_two" value="Agree">
+          <label for="agree_two">Agree</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_two" id="neutral_two" value="Neutral">
+          <label for="neutral_two">Neutral</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_two" id="disagree_two" value="Disagree">
+          <label for="disagree_two">Disagree</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_two" id="strongly_disagree_two" value="Strongly disagree">
+          <label for="strongly_disagree_two">Strongly disagree</label>
+        </p>
+      </li>
+      <li>
+        <h5>The contents were illustrated with examples.</h5>
+        <p>
+          <input class="with-gap" type="radio" name="question_three" id="strongly_agree_three" value="Strongly agree">
+          <label for="strongly_agree_three">Strongly agree</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_three" id="agree_three" value="Agree">
+          <label for="agree_three">Agree</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_three" id="neutral_three" value="Neutral">
+          <label for="neutral_three">Neutral</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_three" id="disagree_three"  value="Disagree">
+          <label for="disagree_three">Disagree</label>
+        </p>
+        <p>
+          <input class="with-gap" type="radio" name="question_three" id="strongly_disagree_three" value="Strongly disagree">
+          <label for="strongly_disagree_three">Strongly disagree</label>
+        </p>
+      </li>
+      <li>
+          <h5>The lectures were clear and easy to understand.</h5>
+          <p>
+            <input class="with-gap" type="radio" name="question_four" id="strongly_agree_four" value="Strongly agree">
+            <label for="strongly_agree_four">Strongly agree</label>
+          </p>
+          <p>
+            <input class="with-gap" type="radio" name="question_four" id="agree_four" value="Agree">
+            <label for="agree_four">Agree</label>
+          </p>
+          <p>
+            <input class="with-gap" type="radio" name="question_four" id="neutral_four" value="Neutral">
+            <label for="neutral_four">Neutral</label>
+          </p>
+          <p>
+            <input class="with-gap" type="radio" name="question_four" id="disagree_four" value="Disagree">
+            <label for="disagree_four">Disagree</label>
+          </p>
+          <p>
+            <input class="with-gap" type="radio" name="question_four" id="strongly_disagree_four" value="Strongly disagree">
+            <label for="strongly_disagree_four">Strongly disagree</label>
+          </p>
+        </li>
+        <li>
+          <p>Please give suggestions for the improvement of this training.</p>
+            <div class="input-field">
+                <textarea name="question_five" placeholder="Write your comments here...." id="message" class="materialize-textarea"></textarea>
+                <label for="message"></label>
+              </div>
+        </li>
+    </h5>
+    </ol>
+    <br>
+      <br>
+      <div>
+        <input type="submit" value="Submit" class="btn">
+      </div>
+    <!-- END HERE -->
+
+
+
+  </div>
+  <!-- ./ CONTAINER END -->
+
+  <!-- MOVES CONTENT UP -->
+  <div style="margin-top: 500px;"></div>
+
+
+  <script>
+    $(document).ready(function () {
+      $('.dropdown-button').dropdown({
+        constrainWidth: false,
+        hover: true,
+        belowOrigin: true,
+        alignment: 'left'
+      });
+
+      // JAVASCRIPT START HERE //
+
+      // INIT SELECT LIST
+      $('select').material_select();
+
+
+    });
+  </script>
+{% endblock content %}
