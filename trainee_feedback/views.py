@@ -17,7 +17,6 @@ def add_feedback_view(request):
     questionThree = request.POST['question_three']
     questionFour = request.POST['question_four']
     questionFive = request.POST['question_five']
-    #print('questionOne-'+questionOne+'\n'+'questionTwo-'+questionTwo+'\n'+'questionThree-'+questionThree+'\n'+'questionFour-'+questionFour+'\n'+'questionFive-'+questionFive)
     new_feedback = TraineeFeedback(
         questionOne = request.POST['question_one'],
         questionTwo = request.POST['question_two'],
@@ -41,3 +40,9 @@ def trainer_view(request):
 
 def report_view(request):
  return render(request, 'report.html')
+
+def feedback_detail_view(request, pk):
+    all_feedback_form_answers = TraineeFeedback.objects.all()
+    answers = all_feedback_form_answers[pk-1]
+    questions = ['questionOne', 'questionTwo', 'questionThree', 'questionFour']
+    return render(request, 'feedback_detail.html', {'answers':answers})

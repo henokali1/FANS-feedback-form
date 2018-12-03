@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Feedback Detail{% endblock %}
+{% block content %}
+    <div class="container">
+            <h1>Sample Feedback detail</h1>
+            <ol>
+                <h5>
+                    <li>Were objectives of the couse clear to you?</li>
+                    <p>{{ answers.questionOne }}</p>
+                    <li>The training contents met with your expections.</li>
+                    <p>{{ answers.questionTwo }}</p>
+                    <li>The contents were illustrated with examples.</li>
+                    <p>{{ answers.questionThree }}</p>
+                    <li>The lectures were clear and easy to understand.</li>
+                    <p>{{ answers.questionFour }}</p>
+                    <li>Given suggestions</li>
+                    <p>{{ answers.questionFive }}</p>
+                </h5>
+            </ol>
+    </div>
+{% endblock content %}
+
